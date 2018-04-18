@@ -1,0 +1,132 @@
+#!/usr/bin/env bash
+
+#boot Gamestate-Code
+
+#array of states
+GAME_STATES=(IDLE INTRO PLAYING PAUSED GAME_OVER)
+echo "//BEGIN HEAD"
+echo "#include <stdlib.h>"
+echo
+echo "int running = 1;"
+echo "int gameState;"
+echo -n "enum gameState {"
+
+A=0
+for i in ${GAME_STATES[@]}; do
+        echo -n "${i}"
+        let A=A+1
+        if [ "$A" -lt "${#GAME_STATES[@]}" ]
+		then
+		echo -n ", "
+	fi
+done
+echo "};"
+echo "void gameState_check(void);"
+echo
+echo "//Gamestate Functions"
+#now we need the substates
+#and merge them together as Sentence Case, so it looks like camel case
+
+SUB_STATES=(GO READY SET UPDATE EVENTS DRAW BYE)
+
+#count sub states
+SS=${#SUB_STATES[@]}
+# echo $SS
+
+##lower to upper
+# 	bar=ready
+# 	foo="$(tr '[:lower:]' '[:upper:]' <<< ${bar:0:1})${bar:1}"
+# 	echo $foo
+
+##upper to lower
+# 	baz=READY
+# 	asd="$(tr '[:upper:]' '[:lower:]' <<< $baz)"
+# 	echo $asd
+
+##low to up only first letter
+# 	bbb="$(tr '[:lower:]' '[:upper:]' <<< ${asd:0:1})${asd:1}"
+# 	echo $bbb
+
+
+#gonna be void functions for now
+#think of timing state integration
+
+echo "//BEGIN GAME STATE FUNCTIONS PROTOTYPES"
+for i in ${GAME_STATES[@]}; do
+        #echo "${i}"
+        baz=$i
+	asd="$(tr '[:upper:]' '[:lower:]' <<< $baz)"
+	#echo $asd
+	bbb="$(tr '[:lower:]' '[:upper:]' <<< ${asd:0:1})${asd:1}"
+	echo "//BEGIN ${i}"
+	for j in ${SUB_STATES[@]}; do
+		bit=$j
+		but="$(tr '[:upper:]' '[:lower:]' <<< $bit)"
+		bat="$(tr '[:lower:]' '[:upper:]' <<< ${but:0:1})${but:1}"
+		echo -n "void "
+		echo -n $bbb
+		echo -n $bat
+		echo "(void);"
+	done
+	echo "//END ${i}"
+	echo
+done
+echo "//END GAME STATE FUNCTIONS PROTOTYPES"
+echo "//END HEAD"
+echo "int main(int argc, char* argv[])"
+echo "{"
+echo "(void)argc;"
+echo "(void)argv;"
+echo
+echo "//set first game state"
+echo "gameState = IDLE;"
+echo "while(running){"
+echo
+echo "	gameState_check();"
+echo
+echo "}"
+echo "return EXIT_SUCCESS;"
+echo "}"
+#output this now
+echo "void gameState_check(void)"
+echo "{"
+echo "		switch(gameState)"
+echo "		{"
+for i in ${GAME_STATES[@]}; do
+	baz=$i
+	asd="$(tr '[:upper:]' '[:lower:]' <<< $baz)"
+	bbb="$(tr '[:lower:]' '[:upper:]' <<< ${asd:0:1})${asd:1}"
+echo "		case ${i}:"
+
+echo "			${bbb}Go();"
+echo "			break;"
+done
+
+echo "		default:"
+echo "		break;"
+echo "    		}"
+echo "}"
+echo
+echo "//BEGIN GAME STATE FUNCTIONS"
+for i in ${GAME_STATES[@]}; do
+        baz=$i
+	asd="$(tr '[:upper:]' '[:lower:]' <<< $baz)"
+	bbb="$(tr '[:lower:]' '[:upper:]' <<< ${asd:0:1})${asd:1}"
+	echo "//BEGIN ${i}"
+	for j in ${SUB_STATES[@]}; do
+		bit=$j
+		but="$(tr '[:upper:]' '[:lower:]' <<< $bit)"
+		bat="$(tr '[:lower:]' '[:upper:]' <<< ${but:0:1})${but:1}"
+		echo -n "void "
+		echo -n $bbb
+		echo -n $bat
+		echo "(void)"
+		echo "{"
+		echo ";"
+		echo "}"
+		echo
+	done
+	echo "//END ${i}"
+	echo
+done
+echo "//END GAME STATE FUNCTIONS"
