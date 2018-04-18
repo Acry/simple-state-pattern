@@ -379,6 +379,7 @@ void Game_overEvents(void)
 		}
 		if(event.type == SDL_MOUSEBUTTONDOWN){
 			if(event.button.button == SDL_BUTTON_LEFT){
+				SDL_SetWindowTitle(Window, "IDLE");
 				gameState = IDLE;
 				gameState_check();
 			}
