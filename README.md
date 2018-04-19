@@ -20,9 +20,9 @@ For more Informations on Gamestates see Videos:
 
 C++:
 
-[Game States and Game Loops](https://www.youtube.com/watch?v=E0Al0-sOO_c)
-
 [Implementing a Main-Game-Loop](https://www.youtube.com/watch?v=44tO977slsU)
 
+Python:
+[Game States and Game Loops](https://www.youtube.com/watch?v=E0Al0-sOO_c)
 
 Get in touch on [SDL-Discourse](https://discourse.libsdl.org).
