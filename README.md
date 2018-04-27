@@ -1,6 +1,6 @@
 Simple High-Level State patterns in C.
 
-![chart](./states.png)
+![chart](./states.svg)
 
 
 The Bash Script make_states
