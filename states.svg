@@ -17,8 +17,8 @@
    inkscape:version="0.92.2 2405546, 2018-03-11"
    sodipodi:docname="states.svg"
    inkscape:export-filename="/home/carsten/tempwork/c/junk/06_special/SDL2/sdl2/junk/statepattern/simple/states.png"
-   inkscape:export-xdpi="49.976582"
-   inkscape:export-ydpi="49.976582">
+   inkscape:export-xdpi="60"
+   inkscape:export-ydpi="60">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -28,16 +28,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="152.82762"
-     inkscape:cy="449.5475"
+     inkscape:zoom="1.4"
+     inkscape:cx="511.42052"
+     inkscape:cy="613.6378"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1052"
-     inkscape:window-x="0"
-     inkscape:window-y="-10"
+     inkscape:window-x="-85"
+     inkscape:window-y="73"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata5">
@@ -47,7 +47,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -629,6 +629,6 @@
          id="tspan1472"
          x="46.573948"
          y="19.340837"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Inconsolata;-inkscape-font-specification:'Inconsolata Bold';stroke-width:0.80203462px">Schematic Anatomy of a Games Life-Cycle</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Inconsolata;-inkscape-font-specification:'Inconsolata Bold';stroke-width:0.80203462px">Schematic Anatomy of a Game's Life-Cycle</tspan></text>
   </g>
 </svg>
